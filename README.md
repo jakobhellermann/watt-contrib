@@ -38,6 +38,17 @@ your-crate v0.1.0
 
 If you're on 1.44+ and want to know why you depend on `syn`, run `cargo tree -e no-dev -i syn`.
 
+<br>
+
+**But wait, how can I know you didn't insert some malicous code into these macros?**
+
+Well, verify it yourself.
+
+`$ cargo watt verify ctor/src/ctor.wasm --crate ctor` will download ctor from crates.io, compile it and check that the `.wasm` file it is the same bit for bit.
+
+Just keep in mind that reproducibility does not work 100% yet, for example compiling a file on linux will result in a different one than on macOS.
+See `cargo watt`'s [section on verification](https://github.com/jakobhellermann/cargo-watt#verifying-compilation-cargo-watt-verify) for more information.
+
 ---
 
 If any of these crates is outdated or you want to add another one:
