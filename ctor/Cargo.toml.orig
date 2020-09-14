@@ -1,0 +1,31 @@
+[package]
+name = "ctor"
+version = "0.1.15"
+authors = ["Matt Mastracci <matthew@mastracci.com>"]
+edition = "2018"
+description = "__attribute__((constructor)) for Rust"
+license = "Apache-2.0 OR MIT"
+repository = "https://github.com/mmastrac/rust-ctor"
+readme = "../README.md"
+
+[badges]
+travis-ci = { repository = "mmastrac/rust-ctor", branch = "master" }
+
+[dependencies]
+quote = "1"
+
+[dependencies.syn]
+version = "1"
+features = ["full", "parsing", "printing", "proc-macro"]
+default-features = false
+
+[dev-dependencies]
+libc-print = "0.1.7"
+
+[lib]
+name = "ctor"
+proc-macro = true
+
+[[example]]
+name = "example"
+path = "src/example.rs"
